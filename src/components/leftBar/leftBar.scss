@@ -1,0 +1,107 @@
+@import "../../style.scss";
+
+.leftBar{
+    @include themify($themes){
+    flex: 2;
+    position: sticky;
+    top: 52px;
+    height: calc(100vh - 52px);
+    overflow: scroll;
+    background-color: themed("bg");
+    color: themed("textColor");
+    -webkit-box-shadow: 12px 7px 9px -13px rgba(0,0,0,0.27); 
+    box-shadow: 12px 7px 9px -13px rgba(0,0,0,0.27);
+    
+    &::-webkit-scrollbar{
+        display: none;
+    }
+
+    @include mobile{
+        position: absolute;
+        width: 40px;
+        height: auto;
+        flex: 2;
+        z-index: 99;
+    }
+    @include tablet{
+        z-index: 22;
+        position: absolute;
+        position: fixed;
+
+       }
+
+    .container{
+        padding: 20px;
+
+        @include mobile{
+            padding: 10px;
+          }
+
+
+        hr{
+            margin: 20px 0px;
+            border: none;
+            height: 0.5px;
+            background-color: themed("border");
+            @include mobile{
+                margin: 15px 0px;
+
+              }
+        }
+        .manu{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            @include mobile{
+                gap: 10px;
+              }
+            span{
+                font-size: 12px;
+
+                @include mobile{
+                    display: none;
+                  }
+            }
+           
+            .user{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+                img{
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    object-fit: cover;
+
+                    @include mobile{
+                        width: 20px;
+                        height: 20px;
+                      }
+                }
+                span{
+                    font-size: 15px;
+                }
+            }
+            .item{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+                
+                img{
+                    width: 30px;
+                    height: 30px;
+                    @include mobile{
+                        width: 15px;
+                        height: 15px;
+                      }
+                }
+                span{
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+}

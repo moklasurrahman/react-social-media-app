@@ -1,0 +1,127 @@
+@import "../../style.scss";
+.profile{
+    @include themify($themes){
+    background-color: themed("bgSoft");
+   .images{
+    width: 100%;
+    height: 300px;
+    position: relative;
+    object-fit: cover;
+    @include mobile{
+        z-index: 1;
+        height: 200px;
+        margin-top: 45px;
+    }
+    .cover{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .profilimg{
+        border: 3px solid themed("bg");
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        margin: auto;
+        top: 225px;
+        @include mobile{
+            width: 100px;
+            height: 100px;
+            top:    150px;
+        }
+
+    }
+   } 
+   .profileContainer{
+    padding: 20px 70px;
+    .userInformetion{
+        -webkit-box-shadow: 0px 0px 9px 1px rgba(0,0,0,0.08); 
+        box-shadow: 0px 0px 9px 1px rgba(0,0,0,0.08);
+        padding: 60px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: themed("bg");
+        border-radius: 10px;
+        .left{
+            flex: 1;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: start;
+
+            .icon{
+                color: themed(textColor);
+                font-size: 25px;
+                @include mobile{
+                    font-size: 15px;
+                }
+
+                &:hover{
+                    color: rgba(4, 160, 172, 0.788);
+                }
+            }
+        }
+        .center{
+            width: 100%;
+            flex: 1;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            .username{
+                font-size: 23px;
+                font-weight: 500;
+                color: themed("textColor");
+                @include mobile{
+                    font-size: 15px;
+                }
+            }
+            .info{
+                display: flex;
+                width: 100%;
+                align-items: center;
+                justify-content: space-around;
+
+                .item{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                color: themed("textColor");
+                cursor: pointer;
+                }
+            }
+            button{
+                border: none;
+                color: white;
+                background-color: #5272ffbe;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: 0.5s;
+                &:hover{
+                    background-color: #5271ff;
+                }
+            }
+        }
+        .right{
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 10px;
+            color: themed("textColor");
+            cursor: pointer;
+            @include mobile{
+                font-size: 15px;
+            }
+        }
+
+    }
+   }
+   
+}
+}
